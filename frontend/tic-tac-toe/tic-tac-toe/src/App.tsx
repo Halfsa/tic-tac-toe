@@ -23,9 +23,9 @@ function App() {
             </ol>
             <GameBoard/>
         </div>
-          <div id="log">
+          <ol id="log">
               <li>LOG</li>
-          </div>
+          </ol>
       </main>
   );
 }
