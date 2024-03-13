@@ -23,7 +23,9 @@ function App() {
             </ol>
             <GameBoard/>
         </div>
-        IMPLEMENT LOG HERE
+          <div id="log">
+              <li>LOG</li>
+          </div>
       </main>
   );
 }
