@@ -1,22 +1,24 @@
-const initialGameBoard: string[][] = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-];
+import {useRef, useState} from "react";
 
-function GameBoard() {
+
+interface Props{
+    initialGameBoard:string[][];
+    clickedThis:(rowIndex:number,ColumnIndex:number)=>void
+}
+function GameBoard(props:Props) {
 
     return (
         <ol id="game-board">
-            {initialGameBoard.map((row, rowIndex) => <li key={rowIndex}>
+            {props.initialGameBoard.map((row, rowIndex) => <li key={rowIndex}>
                 <ol>
                     {row.map((playerSymbol, columnIndex) => <li key={columnIndex}>
-                        <button>{playerSymbol}</button>
+                        <button onClick={()=>props.clickedThis(rowIndex,columnIndex)}>{playerSymbol}</button>
                     </li>)}
                 </ol>
             </li>)}
         </ol>
     );
+
 
 }
 
